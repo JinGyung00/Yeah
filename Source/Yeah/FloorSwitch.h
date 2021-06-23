@@ -36,6 +36,12 @@ public:
 	FVector InitialSwitchLocation;
 
 
+	FTimerHandle SwitchHandle;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FloorSwitch")
+	float SwitchTime;
+	void CloseDoor();
+
+	bool bCharacterOnSwitch;
 
 
 protected:
@@ -66,4 +72,5 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Floor Switch")
 	void UpdateFloorSwitchLocation(float Z);
+
 };
